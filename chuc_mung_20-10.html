@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chúc Mừng 20/10 — 12D02</title>
+  <meta name="description" content="Trang chúc mừng 20/10 cho lớp 12D02 — responsive cho điện thoại & máy tính." />
+  <style>
+    :root{
+      --bg1: #fff7fb;
+      --card: #fff0f6;
+      --accent: #ff5fa8;
+      --accent-2: #ff2d92;
+      --text-dark:#4b1630;
+      --glass: rgba(255,255,255,0.7);
+      --radius:18px;
+      font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0}
+    body{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(255,223,238,0.6), transparent 25%),
+        linear-gradient(180deg,var(--bg1), #ffffff 70%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      color:var(--text-dark);
+    }
+    .stage{
+      width:min(920px, 96vw);
+      background: linear-gradient(180deg, rgba(255,250,253,0.9), rgba(255,245,249,0.95));
+      border-radius: calc(var(--radius) + 4px);
+      padding:28px;
+      box-shadow: 0 12px 50px rgba(197,21,133,0.08);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:14px;
+    }
+    h1.title{
+      margin:0;
+      font-size:clamp(18px,2.4vw,26px);
+      color:var(--accent-2);
+      letter-spacing:0.2px;
+      text-align:center;
+      font-weight:800;
+    }
+    .stage .subtitle{
+      margin:0;
+      font-size:clamp(12px,1.4vw,14px);
+      color:#7a2a56;
+      opacity:0.9;
+    }
+    .wrap{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:6px 0 10px;
+      position:relative;
+    }
+    .heart-btn{
+      background:transparent;
+      border:0;
+      padding:0;
+      cursor:pointer;
+      border-radius:999px;
+      outline:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      -webkit-tap-highlight-color: transparent;
+      transition:transform .14s ease;
+    }
+    .heart-btn:active{ transform: scale(.97) }
+    .heart-btn:focus-visible{
+      box-shadow: 0 0 0 6px rgba(255,95,168,0.12);
+      border-radius:999px;
+    }
+    svg.heart{
+      width:clamp(160px,36vw,480px);
+      height:auto;
+      display:block;
+      filter: drop-shadow(0 18px 30px rgba(197,21,133,0.12));
+    }
+    .message{
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%) scale(.98);
+      min-width:clamp(140px,36%,320px);
+      max-width:86%;
+      padding:12px 16px;
+      background: linear-gradient(180deg,var(--card), rgba(255,245,249,0.9));
+      border:2px solid rgba(255,95,168,0.18);
+      border-radius:12px;
+      text-align:center;
+      font-weight:700;
+      color:var(--accent-2);
+      font-size:clamp(14px,1.8vw,20px);
+      line-height:1.18;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .25s ease, transform .28s cubic-bezier(.2,.9,.2,1);
+      z-index:4;
+    }
+    .message.show{
+      opacity:1;
+      transform:translate(-50%,-50%) scale(1);
+    }
+    .hint{
+      margin:6px 0 0;
+      font-size:12px;
+      color:#8a2b5b;
+      opacity:0.95;
+      text-align:center;
+    }
+    footer{margin-top:6px}
+    footer small{color:#6d274d}
+    @media (max-width:420px){
+      .stage{padding:16px;border-radius:14px}
+      .message{padding:8px 10px;font-size:13px}
+      h1.title{font-size:16px}
+    }
+    @media (prefers-reduced-motion: reduce){
+      .heart, .message{transition:none}
+    }
+  </style>
+</head>
+<body>
+  <main class="stage" role="main" aria-labelledby="page-title">
+    <h1 id="page-title" class="title">Chúc Mừng Ngày 20/10 — Lớp 12D02</h1>
+    <p class="subtitle">Nhấn hoặc chạm vào trái tim để hiện/ẩn lời chúc — tương thích điện thoại & máy tính</p>
+    <section class="wrap" aria-hidden="false">
+      <button id="heartBtn" class="heart-btn" aria-pressed="false" aria-label="Hiện lời chúc" title="Chạm/nhấn để hiện lời chúc">
+        <svg class="heart" viewBox="0 0 400 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+          <defs>
+            <linearGradient id="gradHeart" x1="0" x2="1">
+              <stop offset="0" stop-color="#ff9ccf"/>
+              <stop offset="1" stop-color="#ff4da6"/>
+            </linearGradient>
+          </defs>
+          <path d="M200 340 C30 200, 80 60, 200 130 C320 60, 370 200, 200 340 Z"
+                fill="url(#gradHeart)" stroke="#ff4da6" stroke-width="6"/>
+        </svg>
+      </button>
+      <div id="msg" class="message" role="status" aria-live="polite" aria-hidden="true">
+        💖 Chúc Các Bạn Nữ 12D02 20/10 Vui Vẻ & Luôn Xinh Đẹp! 💖
+      </div>
+    </section>
+    <p class="hint">Bạn có thể nhấn Space hoặc Enter khi nút trái tim được focus. Nhấn lần nữa để ẩn.</p>
+    <footer><small>Thiết kế responsive — nói mình nếu muốn đổi nội dung, màu sắc hoặc thêm hiệu ứng!</small></footer>
+  </main>
+  <script>
+    (function(){
+      const btn = document.getElementById('heartBtn');
+      const msg = document.getElementById('msg');
+      function toggle(show) {
+        const willShow = typeof show === 'boolean' ? show : !msg.classList.contains('show');
+        if (willShow) {
+          msg.classList.add('show');
+          msg.setAttribute('aria-hidden','false');
+          btn.setAttribute('aria-pressed','true');
+          if (!btn._timeout) {
+            btn._timeout = setTimeout(()=> {
+              msg.classList.remove('show');
+              msg.setAttribute('aria-hidden','true');
+              btn.setAttribute('aria-pressed','false');
+              btn._timeout = null;
+            }, 5000);
+          }
+        } else {
+          msg.classList.remove('show');
+          msg.setAttribute('aria-hidden','true');
+          btn.setAttribute('aria-pressed','false');
+          if (btn._timeout) { clearTimeout(btn._timeout); btn._timeout = null; }
+        }
+      }
+      btn.addEventListener('click', (e) => { e.preventDefault(); toggle(); });
+      btn.addEventListener('keydown', (e) => {
+        if (e.key === ' ' || e.key === 'Spacebar' || e.key === 'Enter') {
+          e.preventDefault(); toggle();
+        }
+      });
+      btn.tabIndex = 0;
+      msg.addEventListener('click', () => toggle(false));
+    })();
+  </script>
+</body>
+</html>
