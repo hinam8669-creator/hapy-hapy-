@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chúc Mừng 20/10</title>
+  <style>
+    body {
+      background: #fff0f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .heart-svg {
+      width: 400px;    /* tăng kích thước trái tim */
+      height: 360px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      transition: transform 0.2s;
+    }
+    .heart-svg:active {
+      transform: scale(1.08);
+    }
+    .message-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 240px;
+      padding: 18px 16px;
+      background-color: #ffe4ec;
+      border: 2px solid #ff69b4;
+      border-radius: 12px;
+      box-shadow: 0 0 14px rgba(0,0,0,0.08);
+      text-align: center;
+      font-size: 22px;
+      color: #c71585;
+      font-weight: bold;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      display: none;
+      animation: fadeIn 0.7s ease;
+      line-height: 1.4;
+      pointer-events: none;
+    }
+    .message-box.show {
+      display: block;
+    }
+    .container {
+      position: relative;
+      width: 400px;
+      height: 360px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, -60%);}
+      to { opacity: 1; transform: translate(-50%, -50%);}
+    }
+    @media (max-width: 600px) {
+      .container {
+        width: 220px; height: 200px;
+      }
+      .heart-svg {
+        width: 220px; height: 200px;
+      }
+      .message-box {
+        width: 120px; font-size: 13px; padding: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <svg class="heart-svg" id="heartSVG" viewBox="0 0 400 360" onclick="showMessage()">
+      <path d="M200 340
+        C30 200, 80 60, 200 130
+        C320 60, 370 200, 200 340
+        Z"
+      fill="#ff69b4" stroke="#ff69b4" stroke-width="6"/>
+    </svg>
+    <div class="message-box" id="messageBox">
+      💖 Chúc Các Bạn Nữ 12D02 20/10 Vui Vẻ 💖
+    </div>
+  </div>
+  <script>
+    function showMessage() {
+      var msgBox = document.getElementById("messageBox");
+      msgBox.classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
